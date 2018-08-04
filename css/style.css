@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #efefef;
+  color: #333;
+}
+
+body {
+  font-family: "Courgette", cursive;
+}
+
+.timer {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.timer--title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.timer--info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer--info.is-hidden {
+  display: none;
+}
+
+.timer--days,
+.timer--hours,
+.timer--minutes,
+.timer--seconds {
+  width: 120px;
+  height: 120px;
+  margin: 1rem;
+  border: 2px dashed rebeccapurple;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.timer--label {
+  font-size: 1.4rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.timer--message {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 2rem;
+  -webkit-transform: scale(0.1) rotate(-360deg);
+          transform: scale(0.1) rotate(-360deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s;
+}
+.timer--message.is-visible {
+  -webkit-transform: scale(1) rotate(0);
+          transform: scale(1) rotate(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 40em) {
+  .timer--info {
+    flex-direction: column;
+  }
+}
